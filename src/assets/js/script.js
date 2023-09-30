@@ -35,9 +35,20 @@ function runAnimationStart(){
 }
 jumpImageNumber = 1;
 jumpAnimationNumber = 0;
+boyMarginTop = 307;
 
 function jumpAnimation(){
     jumpImageNumber = jumpImageNumber + 1;
+
+    if (jumpImageNumber <= 6){
+        boyMarginTop = boyMarginTop - 20;
+        boy.style.marginTop = boyMarginTop + "px";
+    }
+    if (jumpImageNumber >=7){
+        boyMarginTop = boyMarginTop + 20;
+        boy.style.marginTop = boyMarginTop + "px";
+
+    }
 
     if (jumpImageNumber == 11){
         jumpImageNumber = 1;
