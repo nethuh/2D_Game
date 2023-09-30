@@ -35,7 +35,7 @@ function runAnimationStart(){
 }
 jumpImageNumber = 1;
 jumpAnimationNumber = 0;
-boyMarginTop = 307;
+boyMarginTop = 442;
 
 function jumpAnimation(){
     jumpImageNumber = jumpImageNumber + 1;
@@ -103,4 +103,30 @@ function moveBackground(){
     backgroundImagePositionX = backgroundImagePositionX - 20;
 
     document.getElementById("background").style.backgroundPositionX = backgroundImagePositionX + "px";
+}
+
+boxMarginLeft = 1040;
+
+function createBoxes() {
+
+    for (var i = 0; i <= 10; i++) {
+
+        var box = document.createElement("div");
+        box.className = "box";
+        document.getElementById("background").appendChild(box);
+        box.style.marginLeft = boxMarginLeft + "px";
+
+       // boxMarginLeft = boxMarginLeft + 500;
+
+        if ( i < 5){
+            boxMarginLeft = boxMarginLeft + 500;
+
+        }
+
+        if(i>=5){
+            boxMarginLeft = boxMarginLeft + 250;
+
+        }
+
+    }
 }

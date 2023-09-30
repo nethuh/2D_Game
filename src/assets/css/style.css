@@ -4,12 +4,21 @@
 .background{
     width: 100%;
     height:  100vh;
-    background-image: url("../img/background2.jpg");
+    background-image: url("../img/background.jpg");
     background-size: cover;
     background-repeat: repeat-x;
+    overflow-x: hidden;
+    position: absolute;
 }
 .boy{
     height: 230px;
-    margin-top: 350px;
+    margin-top: 442px;
     position: absolute;
+}
+.box{
+    width: 100px;
+    height: 100px;
+   background-image: url("../img/fire_icon.png");
+    position: absolute;
+    margin-top: 442px;
 }
