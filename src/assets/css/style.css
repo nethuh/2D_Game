@@ -16,9 +16,12 @@
     position: absolute;
 }
 .box{
-    width: 100px;
-    height: 100px;
-   background-image: url("../img/fire_icon.png");
+    width: 109px;
+    height: 109px;
+   background-image: url("../img/fireGif.gif");
     position: absolute;
-    margin-top: 442px;
+    margin-top: 545px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
 }
