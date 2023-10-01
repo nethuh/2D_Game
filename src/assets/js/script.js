@@ -107,11 +107,18 @@ function keyCheck(event) {
 
 var backgroundImagePositionX = 0;
 var  moveBackgroundAnimationId = 0;
+
+var score = 0;
+
 function moveBackground(){
 
     backgroundImagePositionX = backgroundImagePositionX - 20;
 
     document.getElementById("background").style.backgroundPositionX = backgroundImagePositionX + "px";
+
+    score = score +1;
+    document.getElementById("score").innerHTML = score;
+
 }
 
 boxMarginLeft = 1540;
@@ -174,6 +181,13 @@ function boyDeadAnimation(){
     deadImageNumber = deadImageNumber +1;
     if (deadImageNumber == 11){
         deadImageNumber = 10;
+
+        document.getElementById("end").style.visibility = "visible";
+        document.getElementById("endScore").innerHTML = score;
     }
     boy.src = "assets/img/Dead (" + deadImageNumber + ").png";
+}
+
+function reload(){
+    location.reload();
 }
