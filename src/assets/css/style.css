@@ -12,15 +12,15 @@
 }
 .boy{
     height: 210px;
-    margin-top: 442px;
+    margin-top: 460px;
     position: absolute;
 }
 .box{
-    width: 109px;
-    height: 109px;
+    width: 90px;
+    height: 90px;
    background-image: url("../img/fireGif.gif");
     position: absolute;
-    margin-top: 545px;
+    margin-top: 564px;
     background-size: contain;
     background-repeat: no-repeat;
 

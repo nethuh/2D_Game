@@ -41,11 +41,11 @@ function jumpAnimation(){
     jumpImageNumber = jumpImageNumber + 1;
 
     if (jumpImageNumber <= 6){
-        boyMarginTop = boyMarginTop - 35;
+        boyMarginTop = boyMarginTop - 40;
         boy.style.marginTop = boyMarginTop + "px";
     }
     if (jumpImageNumber >=7){
-        boyMarginTop = boyMarginTop + 35;
+        boyMarginTop = boyMarginTop + 40;
         boy.style.marginTop = boyMarginTop + "px";
 
     }
@@ -114,7 +114,7 @@ function moveBackground(){
     document.getElementById("background").style.backgroundPositionX = backgroundImagePositionX + "px";
 }
 
-boxMarginLeft = 5040;
+boxMarginLeft = 1540;
 
 function createBoxes() {
 
@@ -161,10 +161,19 @@ function boxAnimation() {
                 clearInterval(moveBackgroundAnimationId);
                 moveBackgroundAnimationId = -1;
 
+               deadAnimationNumber = setInterval(boyDeadAnimation,100);
             }
         }
     }
 
 }
+deadImageNumber = 1
+deadAnimationNumber = 0
 
-
+function boyDeadAnimation(){
+    deadImageNumber = deadImageNumber +1;
+    if (deadImageNumber == 11){
+        deadImageNumber = 10;
+    }
+    boy.src = "assets/img/Dead (" + deadImageNumber + ").png";
+}
