@@ -9,7 +9,7 @@ function idleAnimation(){
     if ( idleImageNumber == 11 ){
         idleImageNumber = 1 ;
     }
-    boy.src = "assets/img/idle (" + idleImageNumber + ").png";
+    boy.src = "assets/img/character1/idle (" + idleImageNumber + ").png";
     // boy.src = "http://localhost:63342/Game_1/assets/img/Idle(" + idleImageNumber + ").png";
 }
 
@@ -26,7 +26,7 @@ function runAnimation(){
     }
 
 
-    boy.src = "assets/img/run (" + runImageNumber + ").png";
+    boy.src = "assets/img/character1/run (" + runImageNumber + ").png";
 }
 
 function runAnimationStart(){
@@ -58,7 +58,8 @@ function jumpAnimation(){
         runAnimationStart();
     }
 
-    boy.src = "assets/img/jump (" + jumpImageNumber + ").png";
+
+    boy.src = "assets/img/character1/jump (" + jumpImageNumber + ").png";
 
 }
 
@@ -185,7 +186,7 @@ function boyDeadAnimation(){
         document.getElementById("end").style.visibility = "visible";
         document.getElementById("endScore").innerHTML = score;
     }
-    boy.src = "assets/img/Dead (" + deadImageNumber + ").png";
+    boy.src = "assets/img/character1/Dead (" + deadImageNumber + ").png";
 }
 
 function reload(){
