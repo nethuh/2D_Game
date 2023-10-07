@@ -18,7 +18,7 @@
 .box{
     width: 90px;
     height: 90px;
-   background-image: url("../img/fireGif.gif");
+   background-image: url("../img/fire.gif");
     position: absolute;
     margin-top: 580px;
     background-size: contain;

@@ -2,23 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-
+    <title>Crazy Girl</title>
+    <link rel="stylesheet" href="assets/css/home.css">
 </head>
-<body class="body" onload="idleAnimationStart(); createBoxes();" onkeypress="keyCheck(event);">
-<div class="background" id="background">
-    <img src="assets/img/character1/Idle%20(1).png" class="boy" id="boy"/>
+<body>
+<section id="home-bg">
+    <div id="titleImg"></div>
+    <button id="btnPlay"></button>
+</section>
 
-    <div class="score" id="score">0</div>
+<div id="ttBackground"></div>
+
+<div id="controller-icons">
+    <button id="setting-icon"></button>
+    <button id="help-icon"></button>
+    <button id="sound-icon"></button>
 </div>
 
-<div class="end " id="end">
-<div style="color: rgb(251, 255, 11);">Game Over</div>
-    <div style="color: rgb(145, 189, 0);">Your Score</div>
-    <div style="color: rgb(54, 200, 223);" id="endScore">0</div>
-    <button class="btn"onclick="reload();">Try Again</button>
-</div>
-<script src="assets/js/script.js"></script>
+<section id="help">
+    <button id="btnClose"></button>
+</section>
+<script src="assets/js/jquery-3.6.1.min.js"></script>
+<!--<script src="assets/js/script.js"></script>-->
+<script src="assets/js/home.js"></script>
 </body>
 </html>

@@ -35,17 +35,17 @@ function runAnimationStart(){
 }
 jumpImageNumber = 1;
 jumpAnimationNumber = 0;
-boyMarginTop = 442;
+boyMarginTop = 455;
 
 function jumpAnimation(){
     jumpImageNumber = jumpImageNumber + 1;
 
     if (jumpImageNumber <= 6){
-        boyMarginTop = boyMarginTop - 40;
+        boyMarginTop = boyMarginTop - 60;
         boy.style.marginTop = boyMarginTop + "px";
     }
     if (jumpImageNumber >=7){
-        boyMarginTop = boyMarginTop + 40;
+        boyMarginTop = boyMarginTop + 60;
         boy.style.marginTop = boyMarginTop + "px";
 
     }
@@ -67,7 +67,7 @@ function jumpAnimationStart(){
     clearInterval(idleAnimationNumber);
     runImageNumber=0;
     clearInterval(runAnimationNumber);
-     jumpAnimationNumber = setInterval(jumpAnimation,100);
+     jumpAnimationNumber = setInterval(jumpAnimation,150);
 }
 function keyCheck(event) {
     // alert(event.which);
@@ -119,7 +119,9 @@ function moveBackground(){
 
     score = score +1;
     document.getElementById("score").innerHTML = score;
-
+    if (score >= 20) {
+        winResults();
+    }
 }
 
 boxMarginLeft = 1540;

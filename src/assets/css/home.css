@@ -1,0 +1,135 @@
+body {
+    overflow: hidden;
+    margin: 0;
+}
+
+section#home-bg {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#ttBackground{
+    width: 45%;
+    height: 55%;
+    background-image: url('../img/chBg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 46px;
+    margin: auto;
+    animation: x 4s linear;
+}
+
+@keyframes x {
+    0% {
+        transform: scale3d(10%,10%,10%);
+    }
+}
+
+section#home-bg div#titleImg {
+    display: block !important;
+    width: 30%;
+    height: 6%;
+    background-image: url('../img/name.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 335px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 10;
+    animation: spin 4s linear;
+}
+
+@keyframes spin {
+    0% {
+        width: 40%;
+        height: 40vh;
+        transform: scaleZ(10%);
+    }
+}
+
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+div#controller-icons>button.pressed {
+    width: 75px;
+    height: 75px;
+}
+
+button#btnPlay {
+    width: 13%;
+    height: 13%;
+    background-image: url('../img/start2.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    top: 35%;
+}
+
+button#btnPlay:hover {
+    width: 21%;
+    height: 21%;
+}
+
+div#controller-icons {
+    width: 290px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+div#controller-icons>button {
+    height: 66px;
+    width: 66px;
+    margin: 10px;
+}
+
+div#controller-icons>button:hover {
+    height: 71px;
+    width: 71px;
+}
+
+div#controller-icons>button#setting-icon {
+    background-image: url('../img/Button 2.png');
+    background-size: cover;
+    background-position: center;
+}
+
+div#controller-icons>button#help-icon {
+    background-image: url('../img/Button 1.png');
+    background-size: cover;
+    background-position: center;
+    height: 78px;
+    width: 74px;
+}
+
+div#controller-icons>button#sound-icon {
+    background-image: url('../img/Button 3.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-blur {
+    filter: blur(8px);
+    -webkit-filter: blur(2px);
+}
