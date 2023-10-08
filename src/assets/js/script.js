@@ -1,3 +1,26 @@
+let backgroundMusic = new Audio();
+backgroundMusic.src = "../assets/audio/happy-sun.mp3";
+backgroundMusic.play().then(r => {
+    backgroundMusic.loop = true;
+});
+
+
+let jumpTrack = new Audio();
+jumpTrack.src = "../assets/audio/cartoon-jump-6462.mp3";
+
+let deadTrack = new Audio();
+deadTrack.src = "../assets/audio/welcome-to-hell-103646.mp3";
+
+let flyTrack = new Audio();
+flyTrack.src = "../assets/audio/swing-whoosh-110410.mp3";
+
+let winnerTrack = new Audio();
+winnerTrack.src = "../assets/audio/winner.mp3";
+
+let gameOverTrack = new Audio();
+gameOverTrack.src = "../assets/audio/GameOver.wav";
+
+
 var boy = document.getElementById("boy");
 idleImageNumber = 1; //globle variable
 idleAnimationNumber = 0;
@@ -9,7 +32,7 @@ function idleAnimation(){
     if ( idleImageNumber == 11 ){
         idleImageNumber = 1 ;
     }
-    boy.src = "assets/img/character1/idle (" + idleImageNumber + ").png";
+    boy.src = "../assets/img/character1/idle (" + idleImageNumber + ").png";
     // boy.src = "http://localhost:63342/Game_1/assets/img/Idle(" + idleImageNumber + ").png";
 }
 
@@ -26,7 +49,7 @@ function runAnimation(){
     }
 
 
-    boy.src = "assets/img/character1/run (" + runImageNumber + ").png";
+    boy.src = "../assets/img/character1/run (" + runImageNumber + ").png";
 }
 
 function runAnimationStart(){
@@ -59,7 +82,7 @@ function jumpAnimation(){
     }
 
 
-    boy.src = "assets/img/character1/jump (" + jumpImageNumber + ").png";
+    boy.src = "../assets/img/character1/jump (" + jumpImageNumber + ").png";
 
 }
 
@@ -188,7 +211,7 @@ function boyDeadAnimation(){
         document.getElementById("end").style.visibility = "visible";
         document.getElementById("endScore").innerHTML = score;
     }
-    boy.src = "assets/img/character1/Dead (" + deadImageNumber + ").png";
+    boy.src = "../assets/img/character1/Dead (" + deadImageNumber + ").png";
 }
 
 function reload(){
