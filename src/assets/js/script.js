@@ -2,6 +2,7 @@ let backgroundMusic = new Audio();
 $(document).ready(function () {
     idleAnimationStart();
     createBarrier();
+
 });
 
 backgroundMusic.src = "../assets/audio/happy-sun.mp3";
@@ -27,6 +28,7 @@ gameOverTrack.src = "../assets/audio/GameOver.wav";
 
 
 var boy = document.getElementById("boy");
+var girl = document.getElementById("girl");
 idleImageNumber = 1; //globle variable
 idleAnimationNumber = 0;
 function idleAnimation(){
@@ -38,6 +40,8 @@ function idleAnimation(){
         idleImageNumber = 1 ;
     }
     boy.src = "../assets/img/character1/idle (" + idleImageNumber + ").png";
+    girl.src = "../assets/img/character2/idle (" + idleImageNumber + ").png";
+
     // boy.src = "http://localhost:63342/Game_1/assets/img/Idle(" + idleImageNumber + ").png";
 }
 
@@ -53,8 +57,8 @@ function runAnimation(){
         runImageNumber = 1;
     }
 
-
     boy.src = "../assets/img/character1/run (" + runImageNumber + ").png";
+    girl.src = "../assets/img/character2/run (" + runImageNumber + ").png";
 }
 
 function runAnimationStart(){
@@ -88,6 +92,7 @@ function jumpAnimation(){
 
 
     boy.src = "../assets/img/character1/jump (" + jumpImageNumber + ").png";
+    girl.src = "../assets/img/character2/jump (" + jumpImageNumber + ").png";
 
 }
 
@@ -143,11 +148,11 @@ function moveBackground(){
 
     backgroundImagePositionX = backgroundImagePositionX - 20;
 
-    document.getElementById("background").style.backgroundPositionX = backgroundImagePositionX + "px";
+    document.getElementById("moveBackground").style.backgroundPositionX = backgroundImagePositionX + "px";
 
     score = score +1;
     document.getElementById("score").innerHTML = score;
-    if (score >= 300) {
+    if (score >= 20) {
         winResults();
     }
 }
@@ -160,7 +165,7 @@ function createBoxes() {
 
         var box = document.createElement("div");
         box.className = "box";
-        document.getElementById("background").appendChild(box);
+        document.getElementById("moveBackground").appendChild(box);
         box.style.marginLeft = boxMarginLeft + "px";
         box.id = "box" + i ;
        // boxMarginLeft = boxMarginLeft + 500;
@@ -217,6 +222,7 @@ function boyDeadAnimation(){
         document.getElementById("endScore").innerHTML = score;
     }
     boy.src = "../assets/img/character1/Dead (" + deadImageNumber + ").png";
+    girl.src = "../assets/img/character2/Dead (" + deadImageNumber + ").png";
 }
 
 function reload(){
