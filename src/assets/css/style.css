@@ -168,8 +168,8 @@ div#controlsWrapper > button#btnSound.sound-on {
 
 section#pause-bg {
     display: none;
-    width: 12%;
-    height: 49%;
+    width: 30%;
+    height: 65%;
     background-image: url('../../assets/img/character1/Idle (2).png');
     background-size: cover;
     background-position: center;
@@ -179,6 +179,30 @@ section#pause-bg {
     right: 0;
     bottom: 0;
     margin: auto;
+}
+
+#gameOverWrapper {
+    display: none;
+    width: 30%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    animation: spin 4s linear;
+}
+#gameOver_title-img {
+    height: 85%;
+    background-image: url('../../assets/img/over.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 5px;
 }
 
 @keyframes spin {
@@ -201,6 +225,22 @@ section#pause-bg {
     100% {
         transform: rotate(360deg);
     }
+}
+
+#gameWin_title-img {
+    display: none;
+    width: 80%;
+    height: 20%;
+    background-image: url('../../assets/img/winner.png');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    animation: x 4s linear;
 }
 
 @keyframes x {

@@ -1,4 +1,9 @@
 let backgroundMusic = new Audio();
+$(document).ready(function () {
+    idleAnimationStart();
+    createBarrier();
+});
+
 backgroundMusic.src = "../assets/audio/happy-sun.mp3";
 backgroundMusic.play().then(r => {
     backgroundMusic.loop = true;
@@ -142,7 +147,7 @@ function moveBackground(){
 
     score = score +1;
     document.getElementById("score").innerHTML = score;
-    if (score >= 20) {
+    if (score >= 300) {
         winResults();
     }
 }
@@ -216,4 +221,106 @@ function boyDeadAnimation(){
 
 function reload(){
     location.reload();
+}
+function blurComponents() {
+    $(".background").addClass("bgBlur");
+}
+function removeBlur() {
+    $(".background").removeClass("bgBlur");
+}
+
+
+function winResults(){
+    blurComponents();
+    $("#gameWin_title-img").css("display", "block");
+    $(".btnNext").css("display", "block");
+    $("#btnPause").css("pointer-events", "none");
+    $("#btnResume").css("pointer-events", "none");
+    pauseAll();
+
+    backgroundMusic.pause();
+    winnerTrack.play();
+    $("#btnSound").removeClass("sound-on");
+}
+
+
+function pauseAll() {
+    clearInterval(idleAnimationNumber);
+    idleAnimationNumber = 0;
+
+    if (jumpAnimationNumber !== 0) {
+        clearInterval(idleAnimationNumber);
+        idleAnimationNumber = 0;
+    } else {
+        idleAnimationStart();
+    }
+
+    clearInterval(runAnimationNumber);
+    runAnimationNumber = 0;
+
+    clearInterval(barrierAnimationId);
+    barrierAnimationId = 0;
+
+    clearInterval(jumpAnimationNumber);
+    jumpAnimationNumber = 0;
+
+    clearInterval(moveBackgroundAnimationId);
+    moveBackgroundAnimationId = 0;
+}
+
+$("#btnPause").on('click', function (e) {
+    $("body").css("pointer-events", "none");
+    $("#btnPause").css("pointer-events", "none");
+    $("#btnResume").css("pointer-events", "auto");
+    $("#btnRestart").css("pointer-events", "auto");
+    $(document).off("32");
+    $(document).off("13");
+    pauseAll();
+
+    $("#btnPause").addClass("pause");
+    $("#btnResume").removeClass("pause");
+
+    blurComponents();
+
+    $("#pause-bg").css("display", "block");
+    $("#titleImg").css("display", "block");
+
+    backgroundMusic.pause();
+});
+
+$("#btnResume").on('click', function (e) {
+    $("#btnPause").css("pointer-events", "auto");
+    $("#btnResume").addClass("pause");
+    $("#btnPause").removeClass("pause");
+    $(document).on("32");
+    $(document).on("13");
+    removeBlur();
+    hideComponents();
+    backgroundMusic.play();
+});
+
+function hideComponents() {
+    $("#pause-bg").css("display", "none");
+    $("#titleImg").css("display", "none");
+    $("#gameOver_title-img").css("display", "none");
+    $("#gameWin_title-img").css("display", "none");
+    $("#btnNext1").css("display", "none");
+}
+
+$("#controlsWrapper").hover(function () {
+    $("#controlsWrapper").css("cursor", "grab");
+
+}, function () {
+    $("#controlsWrapper").css("cursor", "pointer");
+});
+
+function game_over() {
+    blurComponents();
+
+    $("#gameOverWrapper").css("display", "block");
+    $("#gameOver_title-img").css("display", "block");
+
+    backgroundMusic.pause();
+    gameOverTrack.play();
+    $("#btnSound").removeClass("sound-on");
 }
