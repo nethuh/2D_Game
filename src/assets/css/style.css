@@ -19,13 +19,26 @@
     overflow-x: hidden;
     position: absolute;
 }
-
+.background3 {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/background1.jpg");
+    background-size: cover;
+    background-repeat: repeat-x;
+    overflow-x: hidden;
+    position: absolute;
+}
 .boy{
     height: 210px;
     margin-top: 460px;
     position: absolute;
 }
 .girl{
+    height: 210px;
+    margin-top: 460px;
+    position: absolute;
+}
+.girl2{
     height: 210px;
     margin-top: 460px;
     position: absolute;
@@ -50,7 +63,6 @@
     width: 135px;
 
 }
-
 .score{
     top: 5px;
     font-family: 'Teko', sans-serif;

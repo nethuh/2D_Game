@@ -2,17 +2,19 @@ $(document).ready(function () {
     idleAnimation();
     runAnimation();
 });
-let boxMarginLeft = 1600;
-var girl = document.getElementById("girl");
+let boxMarginLeft = 500;
+var girl2 = document.getElementById("girl2");
 
 function idleAnimation(){
 
     idleImageNumber = idleImageNumber + 1;
 
-    if ( idleImageNumber == 11 ){
+    if ( idleImageNumber == 10 ){
         idleImageNumber = 1 ;
     }
-    girl.src = "../assets/img/character2/idle (" + idleImageNumber + ").png";
+   // girl2.src = "../assets/img/character3/idle__00 (" + idleImageNumber + ").png";
+    $("#girl2").attr("src", "../assets/img/character3/Idle__00" + idleImageNumber + ".png");
+
 }
 
 function runAnimation(){
@@ -22,7 +24,9 @@ function runAnimation(){
         runImageNumber = 1;
     }
 
-    girl.src = "../assets/img/character2/run (" + runImageNumber + ").png";
+    //girl2.src = "../assets/img/character3/run__00 (" + runImageNumber + ").png";
+    $("#girl2").attr("src", "../assets/img/character3/run__00" + runImageNumber + ".png");
+
 }
 
 function jumpAnimation(){
@@ -30,11 +34,11 @@ function jumpAnimation(){
 
     if (jumpImageNumber <= 6){
         boyMarginTop = boyMarginTop - 60;
-        girl.style.marginTop = boyMarginTop + "px";
+        girl2.style.marginTop = boyMarginTop + "px";
     }
     if (jumpImageNumber >=7){
         boyMarginTop = boyMarginTop + 60;
-        girl.style.marginTop = boyMarginTop + "px";
+        girl2.style.marginTop = boyMarginTop + "px";
 
     }
 
@@ -46,7 +50,10 @@ function jumpAnimation(){
         runAnimationStart();
     }
 
-    girl.src = "../assets/img/character2/jump (" + jumpImageNumber + ").png";
+   // girl2.src = "../assets/img/character3/jump__00 (" + jumpImageNumber + ").png";
+    $("#girl2").attr("src", "../assets/img/character3/jump__00" + jumpImageNumber + ".png");
+
+
 
 }
 
@@ -58,7 +65,9 @@ function boyDeadAnimation(){
     setInterval(idleAnimationNumber);
     idleAnimationNumber=0;
 
-    girl.src = "../assets/img/character2/Dead (" + deadImageNumber + ").png";
+    //girl2.src = "../assets/img/character3/Dead__00 (" + deadImageNumber + ").png";
+    $("#girl2").attr("src", "../assets/img/character3/Dead__00" + deadImageNumber + ".png");
+
 }
 
 function createBarrier() {
@@ -114,10 +123,10 @@ function boxAnimation() {
     }
 }
 
-$("#btnNext1").on('click', function (e) {
-    window.location.href = "level_03.html";
+$("#btnNext3").on('click', function (e) {
+    window.location.href = "level_04.html";
 });
 
 $("#btnRestart").on('click', function (e) {
-    window.location.href = "level_03.html";
+    window.location.href = "level_04.html";
 });

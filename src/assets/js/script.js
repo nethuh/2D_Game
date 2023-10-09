@@ -29,7 +29,7 @@ gameOverTrack.src = "../assets/audio/GameOver.wav";
 
 
 var boy = document.getElementById("boy");
-var girl = document.getElementById("girl");
+
 idleImageNumber = 1; //globle variable
 idleAnimationNumber = 0;
 function idleAnimation(){
@@ -58,7 +58,6 @@ function runAnimation(){
     }
 
     boy.src = "../assets/img/character1/run (" + runImageNumber + ").png";
-    girl.src = "../assets/img/character2/run (" + runImageNumber + ").png";
 }
 
 function runAnimationStart(){
@@ -77,13 +76,10 @@ function jumpAnimation(){
     if (jumpImageNumber <= 6){
         boyMarginTop = boyMarginTop - 60;
         boy.style.marginTop = boyMarginTop + "px";
-        girl.style.marginTop = boyMarginTop + "px";
     }
     if (jumpImageNumber >=7){
         boyMarginTop = boyMarginTop + 60;
         boy.style.marginTop = boyMarginTop + "px";
-        girl.style.marginTop = boyMarginTop + "px";
-
     }
 
     if (jumpImageNumber == 11){
@@ -96,7 +92,6 @@ function jumpAnimation(){
 
 
     boy.src = "../assets/img/character1/jump (" + jumpImageNumber + ").png";
-    girl.src = "../assets/img/character2/jump (" + jumpImageNumber + ").png";
 
 }
 
@@ -174,7 +169,6 @@ function boyDeadAnimation(){
     idleAnimationNumber=0;
 
     boy.src = "../assets/img/character1/Dead (" + deadImageNumber + ").png";
-    girl.src = "../assets/img/character2/Dead (" + deadImageNumber + ").png";
 }
 
 function reload(){
@@ -196,10 +190,12 @@ $("#btnSound").on('click', function (e) {
 function blurComponents() {
     $(".background").addClass("bgBlur");
     $(".background2").addClass("bgBlur");
+    $(".background3").addClass("bgBlur");
 }
 function removeBlur() {
     $(".background").removeClass("bgBlur");
     $(".background2").removeClass("bgBlur");
+    $(".background3").removeClass("bgBlur");
 }
 
 
