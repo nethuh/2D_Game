@@ -1,46 +1,57 @@
-let barrierMarginLeft = 500;
+let boxMarginLeft = 500;
 
 function createBarrier() {
-    for (let i = 0; i <= 10; i++) {
-        $("#barrier").append("<div class='barrier' style='margin-left: " + barrierMarginLeft + "px' id='box" + i + "'></div>");
+    for (var i = 0; i <= 10; i++) {
 
-        if (i < 5) {
-            barrierMarginLeft = barrierMarginLeft + 2000;
+        var box = document.createElement("div");
+        box.className = "box";
+        document.getElementById("moveBackground").appendChild(box);
+        box.style.marginLeft = boxMarginLeft + "px";
+        box.id = "box" + i ;
+        // boxMarginLeft = boxMarginLeft + 500;
+
+        if ( i < 5){
+            boxMarginLeft = boxMarginLeft + 2000;
+
         }
-        if (i >= 5) {
-            barrierMarginLeft = barrierMarginLeft + 1000;
+
+        if(i>=5){
+            boxMarginLeft = boxMarginLeft + 1000;
+
         }
+
     }
 }
 
-let barrierAnimationId = 0;
-
 var tempI = -2;
-
+var boxAnimationId = 0;
 function boxAnimation() {
-    for (let i = 0; i < 6; i++) {
-        let css = parseInt($("#box" + i).css("margin-left"));
+    for (var  i = 0; i<10; i++){
+        var box = document.getElementById("box"+i);
+        var currentMarginLeft = getComputedStyle(box).marginLeft;
+        var newMarginLeft = parseInt(currentMarginLeft) - 35;
+        box.style.marginLeft = newMarginLeft + "px";
 
-        let newMarginLeft = css - 25;
-        $("#box" + i).css("margin-left", newMarginLeft - 25 + "px")
         if (newMarginLeft >= -110 & newMarginLeft <= 100) {
-            if (boyMarginTop > 175) {
-                  tempI = i;
-                        clearInterval(barrierAnimationId);
-                        clearInterval(runAnimationNumber);
-                        runAnimationNumber = -1;
+            if (boyMarginTop > 300){
+                tempI = i;
+                clearInterval(boxAnimationId);
+                clearInterval(runAnimationNumber);
+                runAnimationNumber = -1;
 
-                        clearInterval(jumpAnimationNumber);
-                        jumpAnimationNumber = -1;
+                clearInterval(jumpAnimationNumber);
+                jumpAnimationNumber = -1;
 
-                        clearInterval(moveBackgroundAnimationId);
-                        moveBackgroundAnimationId = -1;
-                        deadAnimationNumber = setInterval(boyDeadAnimation, 100);
-                        deadTrack.play();
-                        game_over();
-                    }
-                }
+                clearInterval(moveBackgroundAnimationId);
+                moveBackgroundAnimationId = -1;
+
+                deadAnimationNumber = setInterval(boyDeadAnimation,100);
+                deadTrack.play();
+                game_over();
+            }
+        }
     }
+
 }
 
 $("#btnNext1").on('click', function (e) {

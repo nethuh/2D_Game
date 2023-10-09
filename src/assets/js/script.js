@@ -2,7 +2,8 @@ let backgroundMusic = new Audio();
 $(document).ready(function () {
     idleAnimationStart();
     createBarrier();
-
+    hideComponents();
+    removeBlur();
 });
 
 backgroundMusic.src = "../assets/audio/happy-sun.mp3";
@@ -35,19 +36,18 @@ function idleAnimation(){
 
     idleImageNumber = idleImageNumber + 1;
 
-
     if ( idleImageNumber == 11 ){
         idleImageNumber = 1 ;
     }
     boy.src = "../assets/img/character1/idle (" + idleImageNumber + ").png";
-    girl.src = "../assets/img/character2/idle (" + idleImageNumber + ").png";
-
-    // boy.src = "http://localhost:63342/Game_1/assets/img/Idle(" + idleImageNumber + ").png";
+       // boy.src = "http://localhost:63342/Game_1/assets/img/Idle(" + idleImageNumber + ").png";
 }
 
 function idleAnimationStart(){
     idleAnimationNumber = setInterval(idleAnimation,200);
 }
+
+
 runImageNumber = 1;
 runAnimationNumber = 0;
 function runAnimation(){
@@ -65,6 +65,8 @@ function runAnimationStart(){
     runAnimationNumber = setInterval(runAnimation,100);
     clearInterval(idleAnimationNumber);
 }
+
+
 jumpImageNumber = 1;
 jumpAnimationNumber = 0;
 boyMarginTop = 455;
@@ -75,10 +77,12 @@ function jumpAnimation(){
     if (jumpImageNumber <= 6){
         boyMarginTop = boyMarginTop - 60;
         boy.style.marginTop = boyMarginTop + "px";
+        girl.style.marginTop = boyMarginTop + "px";
     }
     if (jumpImageNumber >=7){
         boyMarginTop = boyMarginTop + 60;
         boy.style.marginTop = boyMarginTop + "px";
+        girl.style.marginTop = boyMarginTop + "px";
 
     }
 
@@ -104,7 +108,7 @@ function jumpAnimationStart(){
 }
 function keyCheck(event) {
     // alert(event.which);
-    //enter = 32
+    //enter = 13
 // space = 32
     var keyCode = event.which;
 
@@ -158,58 +162,6 @@ function moveBackground(){
 }
 
 boxMarginLeft = 1540;
-
-function createBoxes() {
-
-    for (var i = 0; i <= 10; i++) {
-
-        var box = document.createElement("div");
-        box.className = "box";
-        document.getElementById("moveBackground").appendChild(box);
-        box.style.marginLeft = boxMarginLeft + "px";
-        box.id = "box" + i ;
-       // boxMarginLeft = boxMarginLeft + 500;
-
-        if ( i < 5){
-            boxMarginLeft = boxMarginLeft + 2000;
-
-        }
-
-        if(i>=5){
-            boxMarginLeft = boxMarginLeft + 1000;
-
-        }
-
-    }
-}
-
-var boxAnimationId = 0;
-function boxAnimation() {
-    for (var  i = 0; i<10; i++){
-        var box = document.getElementById("box"+i);
-        var currentMarginLeft = getComputedStyle(box).marginLeft;
-        var newMarginLeft = parseInt(currentMarginLeft) - 35;
-        box.style.marginLeft = newMarginLeft + "px";
-
-        if (newMarginLeft >= -110 & newMarginLeft <= 100) {
-            if (boyMarginTop > 300){
-                clearInterval(boxAnimationId);
-
-                clearInterval(runAnimationNumber);
-                runAnimationNumber = -1;
-
-                clearInterval(jumpAnimationNumber);
-                jumpAnimationNumber = -1;
-
-                clearInterval(moveBackgroundAnimationId);
-                moveBackgroundAnimationId = -1;
-
-               deadAnimationNumber = setInterval(boyDeadAnimation,100);
-            }
-        }
-    }
-
-}
 deadImageNumber = 1
 deadAnimationNumber = 0
 
@@ -217,10 +169,10 @@ function boyDeadAnimation(){
     deadImageNumber = deadImageNumber +1;
     if (deadImageNumber == 11){
         deadImageNumber = 10;
-
-        document.getElementById("end").style.visibility = "visible";
-        document.getElementById("endScore").innerHTML = score;
     }
+    setInterval(idleAnimationNumber);
+    idleAnimationNumber=0;
+
     boy.src = "../assets/img/character1/Dead (" + deadImageNumber + ").png";
     girl.src = "../assets/img/character2/Dead (" + deadImageNumber + ").png";
 }
@@ -228,11 +180,26 @@ function boyDeadAnimation(){
 function reload(){
     location.reload();
 }
+
+$("#btnSound").on('click', function (e) {
+    if (!backgroundMusic.paused) {
+        backgroundMusic.pause();
+        $("#btnSound").removeClass("sound-on");
+    } else {
+        backgroundMusic.play().then(r => {
+            backgroundMusic.loop = true;
+        });
+        $("#btnSound").addClass("sound-on");
+    }
+});
+
 function blurComponents() {
     $(".background").addClass("bgBlur");
+    $(".background2").addClass("bgBlur");
 }
 function removeBlur() {
     $(".background").removeClass("bgBlur");
+    $(".background2").removeClass("bgBlur");
 }
 
 
