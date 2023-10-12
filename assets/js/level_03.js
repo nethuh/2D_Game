@@ -13,7 +13,7 @@ function idleAnimation(){
         idleImageNumber = 1 ;
     }
    // girl2.src = "../assets/img/character3/idle__00 (" + idleImageNumber + ").png";
-    $("#girl2").attr("src", "../assets/img/character3/Idle__00" + idleImageNumber + ".png");
+    $("#girl2").attr("src", "../img/character3/Idle__00" + idleImageNumber + ".png");
 
 }
 
@@ -25,7 +25,7 @@ function runAnimation(){
     }
 
     //girl2.src = "../assets/img/character3/run__00 (" + runImageNumber + ").png";
-    $("#girl2").attr("src", "../assets/img/character3/run__00" + runImageNumber + ".png");
+    $("#girl2").attr("src", "../img/character3/run__00" + runImageNumber + ".png");
 
 }
 
@@ -51,7 +51,7 @@ function jumpAnimation(){
     }
 
    // girl2.src = "../assets/img/character3/jump__00 (" + jumpImageNumber + ").png";
-    $("#girl2").attr("src", "../assets/img/character3/jump__00" + jumpImageNumber + ".png");
+    $("#girl2").attr("src", "../img/character3/jump__00" + jumpImageNumber + ".png");
 
 
 
@@ -66,7 +66,7 @@ function boyDeadAnimation(){
     idleAnimationNumber=0;
 
     //girl2.src = "../assets/img/character3/Dead__00 (" + deadImageNumber + ").png";
-    $("#girl2").attr("src", "../assets/img/character3/Dead__00" + deadImageNumber + ".png");
+    $("#girl2").attr("src", "../img/character3/Dead__00" + deadImageNumber + ".png");
 
 }
 

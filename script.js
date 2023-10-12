@@ -41,7 +41,7 @@ function idleAnimation(){
     if ( idleImageNumber == 11 ){
         idleImageNumber = 1 ;
     }
-    boy.src = "../assets/img/character1/idle (" + idleImageNumber + ").png";
+    boy.src = "../img/character1/idle (" + idleImageNumber + ").png";
        // boy.src = "http://localhost:63342/Game_1/assets/img/Idle(" + idleImageNumber + ").png";
 }
 
@@ -61,7 +61,7 @@ function runAnimation(){
         runImageNumber = 1;
     }
 
-    boy.src = "../assets/img/character1/run (" + runImageNumber + ").png";
+    boy.src = "../img/character1/run (" + runImageNumber + ").png";
 }
 
 function runAnimationStart(){
@@ -96,7 +96,7 @@ function jumpAnimation(){
         runAnimationStart();
     }
 
-    boy.src = "../assets/img/character1/jump (" + jumpImageNumber + ").png";
+    boy.src = "../img/character1/jump (" + jumpImageNumber + ").png";
 
 }
 function jumpAnimationStart(){
@@ -139,7 +139,7 @@ function boyDeadAnimation(){
     setInterval(idleAnimationNumber);
     idleAnimationNumber=0;
 
-    boy.src = "../assets/img/character1/Dead (" + deadImageNumber + ").png";
+    boy.src = "../img/character1/Dead (" + deadImageNumber + ").png";
 }
 
 
