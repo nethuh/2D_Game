@@ -6,7 +6,7 @@ body {
 section#home-bg {
     width: 100%;
     height: 100vh;
-    background-image: url('../img/background7.jpg');
+    background-image: url('assets/img/background7.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -18,7 +18,7 @@ section#home-bg {
 #ttBackground{
     width: 45%;
     height: 55%;
-    background-image: url('../img/chBg.png');
+    background-image: url('assets/img/chBg.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -41,7 +41,7 @@ section#home-bg div#titleImg {
     display: block !important;
     width: 30%;
     height: 18%;
-    background-image: url('../img/name2.png');
+    background-image: url('assets/img/name2.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -77,7 +77,7 @@ div#controller-icons>button.pressed {
 button#btnPlay {
     width: 13%;
     height: 13%;
-    background-image: url('../img/start2.png');
+    background-image: url('assets/img/start2.png');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -110,13 +110,13 @@ div#controller-icons>button:hover {
 }
 
 div#controller-icons>button#setting-icon {
-    background-image: url('../img/Button 2.png');
+    background-image: url('assets/img/Button 2.png');
     background-size: cover;
     background-position: center;
 }
 
 div#controller-icons>button#help-icon {
-    background-image: url('../img/Button 1.png');
+    background-image: url('assets/img/Button 1.png');
     background-size: cover;
     background-position: center;
     height: 78px;
@@ -124,7 +124,7 @@ div#controller-icons>button#help-icon {
 }
 
 div#controller-icons>button#sound-icon {
-    background-image: url('../img/Button 3.png');
+    background-image: url('assets/img/Button 3.png');
     background-size: cover;
     background-position: center;
 }

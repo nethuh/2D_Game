@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="../assets/css/style.css">
 
 </head>
-<body class="body"  onkeypress="keyCheck(event);">
-<div class="background4" id="moveBackground">
+<body class="body" onload="createBoxes();" onkeypress="keyCheck(event);">
+<div class="background2" id="moveBackground">
     <section class="scoreContainer">
         <img src="../assets/img/ScoreBar.png" alt="Score Board" id="scoreBoard">
         <div class="score" id="score">0</div>
     </section>
-    <img src="../assets/img/character4/Idle__001.png" class="boy2" id="boy2"/>
+    <img src="../assets/img/character2/Idle%20(2).png" class="girl" id="girl"/>
     <div id="box"></div>
 </div>
 
@@ -33,11 +33,18 @@
 
 <div id="gameWin_title-img"></div>
 
-<div id="btnNext3" class="btnNext"></div>
+<div id="btnNext2" class="btnNext"></div>
 
+
+<!--<div class="end " id="end">-->
+<!--    <div style="color: rgb(251, 255, 11);">Game Over</div>-->
+<!--    <div style="color: rgb(145, 189, 0);">Your Score</div>-->
+<!--    <div style="color: rgb(54, 200, 223);" id="endScore">0</div>-->
+<!--    <button class="btn"onclick="reload();">Try Again</button>-->
+<!--</div>-->
 <script src="../assets/js/jquery-3.6.1.min.js"></script>
-<script src="../assets/js/script.js"></script>
-<script src="../assets/js/level_04.js"></script>
+<script src="../script.js"></script>
+<script src="../assets/js/level_02.js"></script>
 
 </body>
 </html>
