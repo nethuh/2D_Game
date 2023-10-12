@@ -2,9 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Street Fire</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+
 </head>
-<body>
+<body class="body"  onkeypress="keyCheck(event);">
+<div class="background4" id="moveBackground">
+    <section class="scoreContainer">
+        <img src="../assets/img/ScoreBar.png" alt="Score Board" id="scoreBoard">
+        <div class="score" id="score">0</div>
+    </section>
+    <img src="../assets/img/character4/Idle__001.png" class="boy2" id="boy2"/>
+    <div id="box"></div>
+</div>
+
+<div id="controlsWrapper">
+    <button id="btnSound"></button>
+    <button id="btnPause"></button>
+    <button id="btnResume"></button>
+    <button id="btnRestart"></button>
+</div>
+<section id="pause-bg">
+    <div id="title-img"></div>
+</section>
+
+<section id="gameOverWrapper">
+    <div id="gameOver_title-img"></div>
+    <div id="gameOver_img"></div>
+</section>
+
+<div id="gameWin_title-img"></div>
+
+<div id="btnNext3" class="btnNext"></div>
+
+<script src="../assets/js/jquery-3.6.1.min.js"></script>
+<script src="../assets/js/script.js"></script>
+<script src="../assets/js/level_04.js"></script>
 
 </body>
 </html>

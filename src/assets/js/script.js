@@ -191,13 +191,14 @@ function blurComponents() {
     $(".background").addClass("bgBlur");
     $(".background2").addClass("bgBlur");
     $(".background3").addClass("bgBlur");
+    $(".background4").addClass("bgBlur");
 }
 function removeBlur() {
     $(".background").removeClass("bgBlur");
     $(".background2").removeClass("bgBlur");
     $(".background3").removeClass("bgBlur");
+    $(".background4").removeClass("bgBlur");
 }
-
 
 function winResults(){
     blurComponents();

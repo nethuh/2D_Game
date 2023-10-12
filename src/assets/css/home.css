@@ -6,7 +6,7 @@ body {
 section#home-bg {
     width: 100%;
     height: 100vh;
-    background-image: url('../img/background.jpg');
+    background-image: url('../img/background7.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -40,8 +40,8 @@ section#home-bg {
 section#home-bg div#titleImg {
     display: block !important;
     width: 30%;
-    height: 6%;
-    background-image: url('../img/name.png');
+    height: 18%;
+    background-image: url('../img/name2.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
