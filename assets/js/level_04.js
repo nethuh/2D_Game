@@ -13,7 +13,7 @@ function idleAnimation(){
         idleImageNumber = 1 ;
     }
 
-    $("#boy2").attr("src", "../img/character4/Idle__00" + idleImageNumber + ".png");
+    $("#boy2").attr("src", "../assets/img/character4/Idle__00" + idleImageNumber + ".png");
 
 }
 
@@ -24,7 +24,7 @@ function runAnimation(){
         runImageNumber = 1;
     }
 
-    $("#boy2").attr("src", "../img/character4/run__00" + runImageNumber + ".png");
+    $("#boy2").attr("src", "../assets/img/character4/run__00" + runImageNumber + ".png");
 
 }
 
@@ -49,7 +49,7 @@ function jumpAnimation(){
         runAnimationStart();
     }
 
-    $("#boy2").attr("src", "../img/character4/jump__00" + jumpImageNumber + ".png");
+    $("#boy2").attr("src", "../assets/img/character4/jump__00" + jumpImageNumber + ".png");
 
 
 
@@ -63,7 +63,7 @@ function boyDeadAnimation(){
     setInterval(idleAnimationNumber);
     idleAnimationNumber=0;
     
-    $("#boy2").attr("src", "../img/character4/Dead__00" + deadImageNumber + ".png");
+    $("#boy2").attr("src", "../assets/img/character4/Dead__00" + deadImageNumber + ".png");
 
 }
 

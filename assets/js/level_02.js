@@ -12,7 +12,7 @@ function idleAnimation(){
     if ( idleImageNumber == 11 ){
         idleImageNumber = 1 ;
     }
-    girl.src = "../img/character2/idle (" + idleImageNumber + ").png";
+    girl.src = "../assets/img/character2/idle (" + idleImageNumber + ").png";
 }
 
 function runAnimation(){
@@ -22,7 +22,7 @@ function runAnimation(){
         runImageNumber = 1;
     }
 
-    girl.src = "../img/character2/run (" + runImageNumber + ").png";
+    girl.src = "../assets/img/character2/run (" + runImageNumber + ").png";
 }
 
 function jumpAnimation(){
@@ -46,7 +46,7 @@ function jumpAnimation(){
         runAnimationStart();
     }
 
-    girl.src = "../img/character2/jump (" + jumpImageNumber + ").png";
+    girl.src = "../assets/img/character2/jump (" + jumpImageNumber + ").png";
 
 }
 
@@ -58,7 +58,7 @@ function boyDeadAnimation(){
     setInterval(idleAnimationNumber);
     idleAnimationNumber=0;
 
-    girl.src = "../img/character2/Dead (" + deadImageNumber + ").png";
+    girl.src = "../assets/img/character2/Dead (" + deadImageNumber + ").png";
 }
 
 function createBarrier() {
