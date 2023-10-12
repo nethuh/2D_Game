@@ -114,7 +114,7 @@ function boxAnimation() {
     }
 }
 
-$("#btnNext1").on('click', function (e) {
+$("#btnNext2").on('click', function (e) {
     window.location.href = "level_03.html";
 });
 

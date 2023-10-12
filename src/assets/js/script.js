@@ -105,6 +105,45 @@ function jumpAnimationStart(){
     clearInterval(idleAnimationNumber);
     clearInterval(runAnimationNumber);
 }
+
+// Background Animation
+
+let backgroundImagePositionX = 0;
+let  moveBackgroundAnimationId = 0;
+
+let score = 0;
+
+function moveBackground(){
+    backgroundImagePositionX = backgroundImagePositionX - 20;
+    document.getElementById("moveBackground").style.backgroundPositionX = backgroundImagePositionX + "px";
+    score = score +1;
+    document.getElementById("score").innerHTML = score;
+    if (score >= 60) {
+       winResults();
+    }
+}
+
+boxMarginLeft = 1540;
+
+
+// Start Dead Animation
+
+let deadImageNumber = 1;
+let deadAnimationNumber = 0;
+
+function boyDeadAnimation(){
+    deadImageNumber = deadImageNumber +1;
+    if (deadImageNumber == 11){
+        deadImageNumber = 10;
+    }
+    setInterval(idleAnimationNumber);
+    idleAnimationNumber=0;
+
+    boy.src = "../assets/img/character1/Dead (" + deadImageNumber + ").png";
+}
+
+
+
 function keyCheck(event) {
     // alert(event.which);
     //enter = 13
@@ -141,43 +180,6 @@ function keyCheck(event) {
         }
     }
 }
-
-// Background Animation
-
-let backgroundImagePositionX = 0;
-let  moveBackgroundAnimationId = 0;
-
-let score = 0;
-
-function moveBackground(){
-    backgroundImagePositionX = backgroundImagePositionX - 20;
-    document.getElementById("moveBackground").style.backgroundPositionX = backgroundImagePositionX + "px";
-    score = score +1;
-    document.getElementById("score").innerHTML = score;
-    if (score >= 20) {
-        winResults();
-    }
-}
-
-boxMarginLeft = 1540;
-
-
-// Start Dead Animation
-
-let deadImageNumber = 1;
-let deadAnimationNumber = 0;
-
-function boyDeadAnimation(){
-    deadImageNumber = deadImageNumber +1;
-    if (deadImageNumber == 11){
-        deadImageNumber = 10;
-    }
-    setInterval(idleAnimationNumber);
-    idleAnimationNumber=0;
-
-    boy.src = "../assets/img/character1/Dead (" + deadImageNumber + ").png";
-}
-
 
 
 $("#btnSound").on('click', function (e) {
@@ -219,8 +221,8 @@ function pauseAll() {
     clearInterval(runAnimationNumber);
     runAnimationNumber = 0;
 
-    clearInterval(barrierAnimationId);
-    barrierAnimationId = 0;
+    clearInterval(boxAnimationId);
+    boxAnimationId = 0;
 
     clearInterval(jumpAnimationNumber);
     jumpAnimationNumber = 0;
@@ -275,9 +277,6 @@ function winResults(){
     $("#btnPause").css("pointer-events", "none");
     $("#btnResume").css("pointer-events", "none");
     pauseAll();
-
-    clearInterval(moveBackgroundAnimationId);
-    moveBackgroundAnimationId = 0;
 
     backgroundMusic.pause();
     winnerTrack.play();
