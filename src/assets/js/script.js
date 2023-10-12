@@ -28,10 +28,12 @@ let gameOverTrack = new Audio();
 gameOverTrack.src = "../assets/audio/GameOver.wav";
 
 
-var boy = document.getElementById("boy");
+let boy = document.getElementById("boy");
 
-idleImageNumber = 1; //globle variable
-idleAnimationNumber = 0;
+// Start Idle Animation
+
+let idleImageNumber = 1; //globle variable
+let idleAnimationNumber = 0;
 function idleAnimation(){
 
     idleImageNumber = idleImageNumber + 1;
@@ -48,8 +50,10 @@ function idleAnimationStart(){
 }
 
 
-runImageNumber = 1;
-runAnimationNumber = 0;
+// Start Run Animation
+
+let runImageNumber = 1;
+let runAnimationNumber = 0;
 function runAnimation(){
     runImageNumber = runImageNumber + 1;
 
@@ -66,12 +70,14 @@ function runAnimationStart(){
 }
 
 
-jumpImageNumber = 1;
-jumpAnimationNumber = 0;
-boyMarginTop = 455;
+// Start Jump Animation
+
+let jumpImageNumber = 1;
+let jumpAnimationNumber = 0;
+let boyMarginTop = 455;
 
 function jumpAnimation(){
-    jumpImageNumber = jumpImageNumber + 1;
+    jumpImageNumber++;
 
     if (jumpImageNumber <= 6){
         boyMarginTop = boyMarginTop - 60;
@@ -90,16 +96,14 @@ function jumpAnimation(){
         runAnimationStart();
     }
 
-
     boy.src = "../assets/img/character1/jump (" + jumpImageNumber + ").png";
 
 }
-
 function jumpAnimationStart(){
+    jumpAnimationNumber = setInterval(jumpAnimation, 150);
+    runImageNumber = 0;
     clearInterval(idleAnimationNumber);
-    runImageNumber=0;
     clearInterval(runAnimationNumber);
-     jumpAnimationNumber = setInterval(jumpAnimation,150);
 }
 function keyCheck(event) {
     // alert(event.which);
@@ -138,17 +142,16 @@ function keyCheck(event) {
     }
 }
 
-var backgroundImagePositionX = 0;
-var  moveBackgroundAnimationId = 0;
+// Background Animation
 
-var score = 0;
+let backgroundImagePositionX = 0;
+let  moveBackgroundAnimationId = 0;
+
+let score = 0;
 
 function moveBackground(){
-
     backgroundImagePositionX = backgroundImagePositionX - 20;
-
     document.getElementById("moveBackground").style.backgroundPositionX = backgroundImagePositionX + "px";
-
     score = score +1;
     document.getElementById("score").innerHTML = score;
     if (score >= 20) {
@@ -157,8 +160,12 @@ function moveBackground(){
 }
 
 boxMarginLeft = 1540;
-deadImageNumber = 1
-deadAnimationNumber = 0
+
+
+// Start Dead Animation
+
+let deadImageNumber = 1;
+let deadAnimationNumber = 0;
 
 function boyDeadAnimation(){
     deadImageNumber = deadImageNumber +1;
@@ -171,9 +178,7 @@ function boyDeadAnimation(){
     boy.src = "../assets/img/character1/Dead (" + deadImageNumber + ").png";
 }
 
-function reload(){
-    location.reload();
-}
+
 
 $("#btnSound").on('click', function (e) {
     if (!backgroundMusic.paused) {
@@ -199,20 +204,6 @@ function removeBlur() {
     $(".background3").removeClass("bgBlur");
     $(".background4").removeClass("bgBlur");
 }
-
-function winResults(){
-    blurComponents();
-    $("#gameWin_title-img").css("display", "block");
-    $(".btnNext").css("display", "block");
-    $("#btnPause").css("pointer-events", "none");
-    $("#btnResume").css("pointer-events", "none");
-    pauseAll();
-
-    backgroundMusic.pause();
-    winnerTrack.play();
-    $("#btnSound").removeClass("sound-on");
-}
-
 
 function pauseAll() {
     clearInterval(idleAnimationNumber);
@@ -275,6 +266,22 @@ function hideComponents() {
     $("#gameOver_title-img").css("display", "none");
     $("#gameWin_title-img").css("display", "none");
     $("#btnNext1").css("display", "none");
+}
+
+function winResults(){
+    blurComponents();
+    $("#gameWin_title-img").css("display", "block");
+    $(".btnNext").css("display", "block");
+    $("#btnPause").css("pointer-events", "none");
+    $("#btnResume").css("pointer-events", "none");
+    pauseAll();
+
+    clearInterval(moveBackgroundAnimationId);
+    moveBackgroundAnimationId = 0;
+
+    backgroundMusic.pause();
+    winnerTrack.play();
+    $("#btnSound").removeClass("sound-on");
 }
 
 $("#controlsWrapper").hover(function () {

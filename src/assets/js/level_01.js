@@ -24,12 +24,12 @@ function createBarrier() {
 }
 
 var tempI = -2;
-var boxAnimationId = 0;
+let boxAnimationId = 0;
 function boxAnimation() {
-    for (var  i = 0; i<10; i++){
-        var box = document.getElementById("box"+i);
-        var currentMarginLeft = getComputedStyle(box).marginLeft;
-        var newMarginLeft = parseInt(currentMarginLeft) - 35;
+    for (let  i = 0; i<10; i++){
+        let box = document.getElementById("box"+i);
+        let currentMarginLeft = getComputedStyle(box).marginLeft;
+        let newMarginLeft = parseInt(currentMarginLeft) - 35;
         box.style.marginLeft = newMarginLeft + "px";
 
         if (newMarginLeft >= -110 & newMarginLeft <= 100) {
