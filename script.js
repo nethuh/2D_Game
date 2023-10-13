@@ -41,10 +41,8 @@ function idleAnimation(){
     if ( idleImageNumber == 11 ){
         idleImageNumber = 1 ;
     }
-    //boy.src = "../assets/img/character1/idle (" + idleImageNumber + ").png";
-    $("#boy").attr("src", "../assets/img/character1/idle" + idleImageNumber + ".png");
-
-    // boy.src = "http://localhost:63342/Game_1/assets/img/Idle(" + idleImageNumber + ").png";
+    boy.src = "../assets/img/character1/Idle (" + idleImageNumber + ").png";
+       // boy.src = "http://localhost:63342/Game_1/assets/img/Idle(" + idleImageNumber + ").png";
 }
 
 function idleAnimationStart(){
@@ -63,9 +61,7 @@ function runAnimation(){
         runImageNumber = 1;
     }
 
-    // boy.src = "../assets/img/character1/run (" + runImageNumber + ").png";
-    $("#boy").attr("src", "../assets/img/character1/Run" + runImageNumber + ".png");
-
+    boy.src = "../assets/img/character1/Run (" + runImageNumber + ").png";
 }
 
 function runAnimationStart(){
@@ -100,7 +96,7 @@ function jumpAnimation(){
         runAnimationStart();
     }
 
-    boy.src = "../assets/img/character1/jump (" + jumpImageNumber + ").png";
+    boy.src = "../assets/img/character1/Jump (" + jumpImageNumber + ").png";
 
 }
 function jumpAnimationStart(){
