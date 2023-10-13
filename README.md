@@ -11,5 +11,5 @@ I create this game only using HTML,CSS &amp; JS.
 
 
 
-<img src="https://github.com/nethuh/2D_Game/blob/master/img/Screenshot (13).png" alt="drawing01" width="100%" align="center">
+<img src="https://github.com/nethuh/2D_Game/blob/master/assets/img/Screenshot (13).png" alt="drawing01" width="100%" align="center">
  
