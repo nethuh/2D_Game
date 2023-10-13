@@ -42,7 +42,6 @@ function idleAnimation(){
         idleImageNumber = 1 ;
     }
     boy.src = "../assets/img/character1/Idle (" + idleImageNumber + ").png";
-       // boy.src = "http://localhost:63342/Game_1/assets/img/Idle(" + idleImageNumber + ").png";
 }
 
 function idleAnimationStart(){
@@ -74,7 +73,7 @@ function runAnimationStart(){
 
 let jumpImageNumber = 1;
 let jumpAnimationNumber = 0;
-let boyMarginTop = 520;
+let boyMarginTop = 490;
 
 function jumpAnimation(){
     jumpImageNumber++;
@@ -118,13 +117,10 @@ function moveBackground(){
     document.getElementById("moveBackground").style.backgroundPositionX = backgroundImagePositionX + "px";
     score = score +1;
     document.getElementById("score").innerHTML = score;
-    if (score >= 200) {
+    if (score >= 250) {
        winResults();
     }
 }
-
-boxMarginLeft = 1540;
-
 
 // Start Dead Animation
 
@@ -142,6 +138,60 @@ function boyDeadAnimation(){
     boy.src = "../assets/img/character1/Dead (" + deadImageNumber + ").png";
 }
 
+let boxMarginLeft = 500;
+
+function createBarrier() {
+    for (var i = 0; i <= 10; i++) {
+
+        var box = document.createElement("div");
+        box.className = "box";
+        document.getElementById("moveBackground").appendChild(box);
+        box.style.marginLeft = boxMarginLeft + "px";
+        box.id = "box" + i ;
+        // boxMarginLeft = boxMarginLeft + 500;
+
+        if ( i < 5){
+            boxMarginLeft = boxMarginLeft + 1000;
+
+        }
+
+        if(i>=5){
+            boxMarginLeft = boxMarginLeft + 2000;
+        }
+    }
+}
+
+let boxAnimationId = 0;
+
+var tempI = -2;
+
+function boxAnimation() {
+    for (var  i = 0; i<10; i++){
+        var box = document.getElementById("box"+i);
+        var currentMarginLeft = getComputedStyle(box).marginLeft;
+        var newMarginLeft = parseInt(currentMarginLeft) - 35;
+        box.style.marginLeft = newMarginLeft + "px";
+
+        if (newMarginLeft >= -80 & newMarginLeft <= 75) {
+            if (boyMarginTop > 400){
+                tempI = i;
+                clearInterval(boxAnimationId);
+                clearInterval(runAnimationNumber);
+                runAnimationNumber = -1;
+
+                clearInterval(jumpAnimationNumber);
+                jumpAnimationNumber = -1;
+
+                clearInterval(moveBackgroundAnimationId);
+                moveBackgroundAnimationId = -1;
+
+                deadAnimationNumber = setInterval(boyDeadAnimation,100);
+                deadTrack.play();
+                game_over();
+            }
+        }
+    }
+}
 $(document).on('keypress', function (e) {
 
     // alert(event.which);

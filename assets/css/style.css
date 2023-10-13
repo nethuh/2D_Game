@@ -58,11 +58,11 @@
     position: absolute;
 }
 .box{
-    width: 90px;
-    height: 90px;
+    width: 75px;
+    height: 75px;
    background-image: url("../img/fire.gif");
     position: absolute;
-    margin-top: 580px;
+    margin-top: 610px;
     background-size: contain;
     background-repeat: no-repeat;
 

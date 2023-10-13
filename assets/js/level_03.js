@@ -1,8 +1,3 @@
-$(document).ready(function () {
-    idleAnimation();
-    runAnimation();
-});
-let boxMarginLeft = 500;
 var girl2 = document.getElementById("girl2");
 
 function idleAnimation(){
@@ -68,59 +63,6 @@ function boyDeadAnimation(){
     //girl2.src = "../assets/img/character3/Dead__00 (" + deadImageNumber + ").png";
     $("#girl2").attr("src", "../assets/img/character3/Dead__00" + deadImageNumber + ".png");
 
-}
-
-function createBarrier() {
-    for (var i = 0; i <= 10; i++) {
-
-        var box = document.createElement("div");
-        box.className = "box";
-        document.getElementById("moveBackground").appendChild(box);
-        box.style.marginLeft = boxMarginLeft + "px";
-        box.id = "box" + i ;
-        // boxMarginLeft = boxMarginLeft + 500;
-
-        if ( i < 5){
-            boxMarginLeft = boxMarginLeft + 2000;
-
-        }
-
-        if(i>=5){
-            boxMarginLeft = boxMarginLeft + 1000;
-        }
-    }
-}
-
-let boxAnimationId = 0;
-
-var tempI = -2;
-
-function boxAnimation() {
-    for (var  i = 0; i<10; i++){
-        var box = document.getElementById("box"+i);
-        var currentMarginLeft = getComputedStyle(box).marginLeft;
-        var newMarginLeft = parseInt(currentMarginLeft) - 35;
-        box.style.marginLeft = newMarginLeft + "px";
-
-        if (newMarginLeft >= -110 & newMarginLeft <= 100) {
-            if (boyMarginTop > 450){
-                tempI = i;
-                clearInterval(boxAnimationId);
-                clearInterval(runAnimationNumber);
-                runAnimationNumber = -1;
-
-                clearInterval(jumpAnimationNumber);
-                jumpAnimationNumber = -1;
-
-                clearInterval(moveBackgroundAnimationId);
-                moveBackgroundAnimationId = -1;
-
-                deadAnimationNumber = setInterval(boyDeadAnimation,100);
-                deadTrack.play();
-                game_over();
-            }
-        }
-    }
 }
 
 $("#btnNext3").on('click', function (e) {
