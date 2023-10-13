@@ -74,12 +74,12 @@ function runAnimationStart(){
 
 let jumpImageNumber = 1;
 let jumpAnimationNumber = 0;
-let boyMarginTop = 400;
+let boyMarginTop = 520;
 
 function jumpAnimation(){
     jumpImageNumber++;
 
-    if (jumpImageNumber <= 5){
+    if (jumpImageNumber <= 6){
         boyMarginTop = boyMarginTop - 60;
         boy.style.marginTop = boyMarginTop + "px";
     }
@@ -118,7 +118,7 @@ function moveBackground(){
     document.getElementById("moveBackground").style.backgroundPositionX = backgroundImagePositionX + "px";
     score = score +1;
     document.getElementById("score").innerHTML = score;
-    if (score >= 60) {
+    if (score >= 200) {
        winResults();
     }
 }

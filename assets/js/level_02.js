@@ -12,7 +12,7 @@ function idleAnimation(){
     if ( idleImageNumber == 11 ){
         idleImageNumber = 1 ;
     }
-    girl.src = "../assets/img/character2/idle (" + idleImageNumber + ").png";
+    girl.src = "../assets/img/character2/Idle (" + idleImageNumber + ").png";
 }
 
 function runAnimation(){
@@ -22,7 +22,7 @@ function runAnimation(){
         runImageNumber = 1;
     }
 
-    girl.src = "../assets/img/character2/run (" + runImageNumber + ").png";
+    girl.src = "../assets/img/character2/Run (" + runImageNumber + ").png";
 }
 
 function jumpAnimation(){
@@ -46,7 +46,7 @@ function jumpAnimation(){
         runAnimationStart();
     }
 
-    girl.src = "../assets/img/character2/jump (" + jumpImageNumber + ").png";
+    girl.src = "../assets/img/character2/Jump (" + jumpImageNumber + ").png";
 
 }
 
@@ -94,7 +94,7 @@ function boxAnimation() {
         box.style.marginLeft = newMarginLeft + "px";
 
         if (newMarginLeft >= -110 & newMarginLeft <= 100) {
-            if (boyMarginTop > 300){
+            if (boyMarginTop > 450){
                 tempI = i;
                 clearInterval(boxAnimationId);
                 clearInterval(runAnimationNumber);
