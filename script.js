@@ -74,16 +74,16 @@ function runAnimationStart(){
 
 let jumpImageNumber = 1;
 let jumpAnimationNumber = 0;
-let boyMarginTop = 455;
+let boyMarginTop = 400;
 
 function jumpAnimation(){
     jumpImageNumber++;
 
-    if (jumpImageNumber <= 6){
+    if (jumpImageNumber <= 5){
         boyMarginTop = boyMarginTop - 60;
         boy.style.marginTop = boyMarginTop + "px";
     }
-    if (jumpImageNumber >=7){
+    if (jumpImageNumber >= 7){
         boyMarginTop = boyMarginTop + 60;
         boy.style.marginTop = boyMarginTop + "px";
     }
@@ -142,44 +142,43 @@ function boyDeadAnimation(){
     boy.src = "../assets/img/character1/Dead (" + deadImageNumber + ").png";
 }
 
+$(document).on('keypress', function (e) {
 
-
-function keyCheck(event) {
     // alert(event.which);
     //enter = 13
 // space = 32
-    var keyCode = event.which;
 
-    if (keyCode == 13) {
+    if (e.keyCode === 13) {
         if (runAnimationNumber == 0) {
             runAnimationStart();
         }
 
-
-        if (moveBackgroundAnimationId == 0) {
-            moveBackgroundAnimationId = setInterval(moveBackground, 100);
+        if (moveBackgroundAnimationId === 0) {
+            moveBackgroundAnimationId = setInterval(moveBackground, 100)
         }
-        if (boxAnimationId==0){
-            boxAnimationId = setInterval(boxAnimation,100);
-
-
+        if (boxAnimationId === 0) {
+            boxAnimationId = setInterval(boxAnimation, 150);
         }
+        removeBlur();
     }
 
-    if (keyCode == 32){
-        if (jumpAnimationNumber == 0){
+    else if (e.keyCode === 32) {
+        clearInterval(idleAnimationNumber);
+        idleAnimationNumber = 0;
+
+        if (jumpAnimationNumber === 0) {
             jumpAnimationStart();
         }
-
-        if (moveBackgroundAnimationId == 0) {
-            moveBackgroundAnimationId = setInterval(moveBackground, 100);
+        if (moveBackgroundAnimationId === 0) {
+            moveBackgroundAnimationId = setInterval(moveBackground, 100)
         }
-        if (boxAnimationId==0){
-            boxAnimationId = setInterval(boxAnimation,100);
-
+        if (boxAnimationId === 0) {
+            boxAnimationId = setInterval(boxAnimation, 150);
         }
+        removeBlur();
+        jumpTrack.play();
     }
-}
+});
 
 
 $("#btnSound").on('click', function (e) {

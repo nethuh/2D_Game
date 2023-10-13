@@ -1,25 +1,15 @@
 let boxMarginLeft = 500;
 
 function createBarrier() {
-    for (var i = 0; i <= 10; i++) {
+    for (let i = 0; i <= 10; i++) {
+        $("#box").append("<div class='box' style='margin-left: " + boxMarginLeft + "px' id='box" + i + "'></div>");
 
-        var box = document.createElement("div");
-        box.className = "box";
-        document.getElementById("moveBackground").appendChild(box);
-        box.style.marginLeft = boxMarginLeft + "px";
-        box.id = "box" + i ;
-        // boxMarginLeft = boxMarginLeft + 500;
-
-        if ( i < 5){
+        if (i < 5) {
             boxMarginLeft = boxMarginLeft + 2000;
-
         }
-
-        if(i>=5){
+        if (i >= 5) {
             boxMarginLeft = boxMarginLeft + 1000;
-
         }
-
     }
 }
 
